@@ -41,21 +41,22 @@ public class RecipeSearchView extends javax.swing.JFrame {
     private void initComponents() {
 
         jSplitPane1 = new javax.swing.JSplitPane();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        SearchPanel = new javax.swing.JPanel();
+        kitchenLabel = new javax.swing.JLabel();
+        maxTimeLabel = new javax.swing.JLabel();
         kitchenList = new javax.swing.JComboBox();
-        jLabel2 = new javax.swing.JLabel();
+        ingredientLabel = new javax.swing.JLabel();
         ingredientList = new javax.swing.JComboBox();
-        jLabel3 = new javax.swing.JLabel();
+        difficultyLabel = new javax.swing.JLabel();
         difficultyList = new javax.swing.JComboBox();
-        jLabel4 = new javax.swing.JLabel();
+        maxPriceLabel = new javax.swing.JLabel();
         maxTimeField = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        priceSlider = new javax.swing.JSlider();
-        jSpinner1 = new javax.swing.JSpinner();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        searchButton = new javax.swing.JButton();
+        maxTimeSlider = new javax.swing.JSlider();
+        maxPriceSpinner = new javax.swing.JSpinner();
+        resultsAndRecipePanel = new javax.swing.JPanel();
+        resultsPanel = new javax.swing.JPanel();
+        recipePanel = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         exitMenuItem = new javax.swing.JMenuItem();
@@ -67,9 +68,9 @@ public class RecipeSearchView extends javax.swing.JFrame {
         setTitle(bundle.getString("Application.title")); // NOI18N
         setName("applicationFrame"); // NOI18N
 
-        jLabel1.setText("Kök");
+        kitchenLabel.setText("Kök");
 
-        jLabel5.setText("Maxtid");
+        maxTimeLabel.setText("Maxtid");
 
         kitchenList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "Sverige", "Grekland", "Indien", "Asien", "Afrika", "Frankrike" }));
         kitchenList.addActionListener(new java.awt.event.ActionListener() {
@@ -78,15 +79,15 @@ public class RecipeSearchView extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Huvudingrediens");
+        ingredientLabel.setText("Huvudingrediens");
 
         ingredientList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "Kött", "Fisk", "Kyckling", "Vegetarisk" }));
 
-        jLabel3.setText("Svårighetsgrad");
+        difficultyLabel.setText("Svårighetsgrad");
 
         difficultyList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "Lätt", "Mellan", "Svår" }));
 
-        jLabel4.setText("Maxpris");
+        maxPriceLabel.setText("Maxpris");
 
         maxTimeField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,85 +95,101 @@ public class RecipeSearchView extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Sök");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        searchButton.setText("Sök");
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                searchButtonActionPerformed(evt);
             }
         });
 
-        priceSlider.setMajorTickSpacing(20);
-        priceSlider.setMaximum(150);
-        priceSlider.setMinimum(10);
-        priceSlider.setMinorTickSpacing(10);
-        priceSlider.setPaintLabels(true);
-        priceSlider.setPaintTicks(true);
-        priceSlider.setSnapToTicks(true);
+        maxTimeSlider.setMajorTickSpacing(20);
+        maxTimeSlider.setMaximum(150);
+        maxTimeSlider.setMinimum(10);
+        maxTimeSlider.setMinorTickSpacing(10);
+        maxTimeSlider.setPaintLabels(true);
+        maxTimeSlider.setPaintTicks(true);
+        maxTimeSlider.setSnapToTicks(true);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
-                        .addComponent(kitchenList, 0, 285, Short.MAX_VALUE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
-                        .addComponent(ingredientList, 0, 285, Short.MAX_VALUE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
-                        .addComponent(difficultyList, 0, 285, Short.MAX_VALUE)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
-                        .addComponent(maxTimeField, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
-                        .addComponent(priceSlider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        javax.swing.GroupLayout SearchPanelLayout = new javax.swing.GroupLayout(SearchPanel);
+        SearchPanel.setLayout(SearchPanelLayout);
+        SearchPanelLayout.setHorizontalGroup(
+            SearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SearchPanelLayout.createSequentialGroup()
+                .addGroup(SearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SearchPanelLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addGroup(SearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(SearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(maxTimeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                                .addComponent(kitchenLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                                .addComponent(kitchenList, 0, 285, Short.MAX_VALUE)
+                                .addComponent(ingredientLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                                .addComponent(ingredientList, 0, 285, Short.MAX_VALUE)
+                                .addComponent(difficultyLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                                .addComponent(difficultyList, 0, 285, Short.MAX_VALUE)
+                                .addComponent(maxPriceLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                                .addComponent(maxTimeSlider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(maxPriceSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(SearchPanelLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(maxTimeField, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(SearchPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        SearchPanelLayout.setVerticalGroup(
+            SearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SearchPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(kitchenLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(kitchenList, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ingredientLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(ingredientList, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(difficultyLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(difficultyList, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(maxPriceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(priceSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(maxPriceSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(maxTimeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(maxTimeSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
                 .addComponent(maxTimeField, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(129, 129, 129)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(178, Short.MAX_VALUE))
+                .addGap(41, 41, 41)
+                .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(240, Short.MAX_VALUE))
         );
 
-        jSplitPane1.setLeftComponent(jPanel2);
+        jSplitPane1.setLeftComponent(SearchPanel);
 
-        jPanel3.setPreferredSize(new java.awt.Dimension(400, 50));
-        jPanel3.setLayout(new java.awt.CardLayout());
+        resultsAndRecipePanel.setPreferredSize(new java.awt.Dimension(400, 50));
+        resultsAndRecipePanel.setLayout(new java.awt.CardLayout());
 
-        jPanel1.setLayout(new java.awt.GridLayout(15, 1));
-        jPanel3.add(jPanel1, "card2");
+        resultsPanel.setLayout(new java.awt.GridLayout(15, 1));
+        resultsAndRecipePanel.add(resultsPanel, "card2");
 
-        jSplitPane1.setRightComponent(jPanel3);
+        javax.swing.GroupLayout recipePanelLayout = new javax.swing.GroupLayout(recipePanel);
+        recipePanel.setLayout(recipePanelLayout);
+        recipePanelLayout.setHorizontalGroup(
+            recipePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        recipePanelLayout.setVerticalGroup(
+            recipePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 955, Short.MAX_VALUE)
+        );
+
+        resultsAndRecipePanel.add(recipePanel, "card3");
+
+        jSplitPane1.setRightComponent(resultsAndRecipePanel);
 
         java.util.ResourceBundle bundle1 = java.util.ResourceBundle.getBundle("recipesearch/resources/RecipeSearchView"); // NOI18N
         fileMenu.setText(bundle1.getString("fileMenu.text")); // NOI18N
@@ -207,8 +224,8 @@ public class RecipeSearchView extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jSplitPane1)
-                .addContainerGap())
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(352, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,7 +251,7 @@ public class RecipeSearchView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_maxTimeFieldActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
         /////////////////////////////////////////////////////////////////////
         try{
             maxTime = Integer.parseInt(maxTimeField.getText());
@@ -242,7 +259,7 @@ public class RecipeSearchView extends javax.swing.JFrame {
             maxTime = 0;
         }
         
-        maxPrice = priceSlider.getValue();
+        maxPrice = maxTimeSlider.getValue();
         
         /////////////////////////////////////////////////////////////////////
         if(kitchenList.getSelectedItem().toString().equals("")){
@@ -267,12 +284,12 @@ public class RecipeSearchView extends javax.swing.JFrame {
             kitchenItem, maxPrice, ingredientItem);
         
         reciButtons.clear();
-        jPanel1.removeAll();
+        resultsPanel.removeAll();
         
         for(int i = 0; i< recCon.recipes.size(); i++){
             if(recCon.recipes.get(i).getMatch() > 49){
                 reciButtons.add(i, (new JButton(recCon.recipes.get(i).getName() + recCon.recipes.get(i).getCuisine() + recCon.recipes.get(i).getMainIngredient() + recCon.recipes.get(i).getDifficulty())));
-                jPanel1.add(reciButtons.get(i));
+                resultsPanel.add(reciButtons.get(i));
             }
         }
         validate();
@@ -282,29 +299,30 @@ public class RecipeSearchView extends javax.swing.JFrame {
         System.out.println(maxPrice);
         System.out.println(ingredientItem);
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_searchButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel SearchPanel;
     private javax.swing.JMenuItem aboutMenuItem;
+    private javax.swing.JLabel difficultyLabel;
     private javax.swing.JComboBox difficultyList;
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
+    private javax.swing.JLabel ingredientLabel;
     private javax.swing.JComboBox ingredientList;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JLabel kitchenLabel;
     private javax.swing.JComboBox kitchenList;
+    private javax.swing.JLabel maxPriceLabel;
+    private javax.swing.JSpinner maxPriceSpinner;
     private javax.swing.JTextField maxTimeField;
-    private javax.swing.JSlider priceSlider;
+    private javax.swing.JLabel maxTimeLabel;
+    private javax.swing.JSlider maxTimeSlider;
+    private javax.swing.JPanel recipePanel;
+    private javax.swing.JPanel resultsAndRecipePanel;
+    private javax.swing.JPanel resultsPanel;
+    private javax.swing.JButton searchButton;
     // End of variables declaration//GEN-END:variables
 }
