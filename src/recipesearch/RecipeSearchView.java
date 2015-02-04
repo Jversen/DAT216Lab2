@@ -15,14 +15,14 @@ import javax.swing.*;
 public class RecipeSearchView extends javax.swing.JFrame {
     
     
-    RecipeController recCon = new RecipeController();
+    RecipeController reciCon = new RecipeController();
     ArrayList<JButton> reciButtons = new ArrayList<JButton>();
     int maxTime;
     int maxPrice;
     String kitchenItem;
     String ingredientItem;
     String difficultyItem;
-    
+    ImageIcon recipeImg = new ImageIcon("recipe1.jpg");
     
     /**
      * Creates new form ExampleApplicationView
@@ -50,7 +50,6 @@ public class RecipeSearchView extends javax.swing.JFrame {
         difficultyLabel = new javax.swing.JLabel();
         difficultyList = new javax.swing.JComboBox();
         maxPriceLabel = new javax.swing.JLabel();
-        maxTimeField = new javax.swing.JTextField();
         searchButton = new javax.swing.JButton();
         maxTimeSlider = new javax.swing.JSlider();
         maxPriceSpinner = new javax.swing.JSpinner();
@@ -89,12 +88,6 @@ public class RecipeSearchView extends javax.swing.JFrame {
 
         maxPriceLabel.setText("Maxpris");
 
-        maxTimeField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                maxTimeFieldActionPerformed(evt);
-            }
-        });
-
         searchButton.setText("Sök");
         searchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,28 +108,24 @@ public class RecipeSearchView extends javax.swing.JFrame {
         SearchPanelLayout.setHorizontalGroup(
             SearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SearchPanelLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
                 .addGroup(SearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(SearchPanelLayout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(SearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(SearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(maxTimeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
-                                .addComponent(kitchenLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
-                                .addComponent(kitchenList, 0, 285, Short.MAX_VALUE)
-                                .addComponent(ingredientLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
-                                .addComponent(ingredientList, 0, 285, Short.MAX_VALUE)
-                                .addComponent(difficultyLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
-                                .addComponent(difficultyList, 0, 285, Short.MAX_VALUE)
-                                .addComponent(maxPriceLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
-                                .addComponent(maxTimeSlider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(maxPriceSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(SearchPanelLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(maxTimeField, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(SearchPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(16, Short.MAX_VALUE))
+                    .addGroup(SearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(maxTimeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                        .addComponent(kitchenLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                        .addComponent(kitchenList, 0, 285, Short.MAX_VALUE)
+                        .addComponent(ingredientLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                        .addComponent(ingredientList, 0, 285, Short.MAX_VALUE)
+                        .addComponent(difficultyLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                        .addComponent(difficultyList, 0, 285, Short.MAX_VALUE)
+                        .addComponent(maxPriceLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                        .addComponent(maxTimeSlider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(maxPriceSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SearchPanelLayout.createSequentialGroup()
+                .addContainerGap(15, Short.MAX_VALUE)
+                .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         SearchPanelLayout.setVerticalGroup(
             SearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,11 +150,9 @@ public class RecipeSearchView extends javax.swing.JFrame {
                 .addComponent(maxTimeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(maxTimeSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addComponent(maxTimeField, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addGap(60, 60, 60)
                 .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(240, Short.MAX_VALUE))
+                .addContainerGap(3513, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(SearchPanel);
@@ -173,18 +160,19 @@ public class RecipeSearchView extends javax.swing.JFrame {
         resultsAndRecipePanel.setPreferredSize(new java.awt.Dimension(400, 50));
         resultsAndRecipePanel.setLayout(new java.awt.CardLayout());
 
-        resultsPanel.setLayout(new java.awt.GridLayout(15, 1));
+        resultsPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        resultsPanel.setLayout(new java.awt.GridLayout(50, 1, 0, 5));
         resultsAndRecipePanel.add(resultsPanel, "card2");
 
         javax.swing.GroupLayout recipePanelLayout = new javax.swing.GroupLayout(recipePanel);
         recipePanel.setLayout(recipePanelLayout);
         recipePanelLayout.setHorizontalGroup(
             recipePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 484, Short.MAX_VALUE)
         );
         recipePanelLayout.setVerticalGroup(
             recipePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 955, Short.MAX_VALUE)
+            .addGap(0, 4195, Short.MAX_VALUE)
         );
 
         resultsAndRecipePanel.add(recipePanel, "card3");
@@ -224,8 +212,7 @@ public class RecipeSearchView extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(352, Short.MAX_VALUE))
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,20 +234,19 @@ public class RecipeSearchView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_kitchenListActionPerformed
 
-    private void maxTimeFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maxTimeFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_maxTimeFieldActionPerformed
+
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
         /////////////////////////////////////////////////////////////////////
-        try{
-            maxTime = Integer.parseInt(maxTimeField.getText());
-        }catch(NumberFormatException e){
-            maxTime = 0;
-        }
+//        try{
+//            maxTime = Integer.parseInt(maxTimeField.getText());
+//        }catch(NumberFormatException e){
+//            maxTime = 0;
+//        }
         
-        maxPrice = maxTimeSlider.getValue();
-        
+        maxPrice = (Integer) maxPriceSpinner.getValue();
+        maxTime = maxTimeSlider.getValue();
+       
         /////////////////////////////////////////////////////////////////////
         if(kitchenList.getSelectedItem().toString().equals("")){
             kitchenItem = null;
@@ -280,15 +266,22 @@ public class RecipeSearchView extends javax.swing.JFrame {
             difficultyItem = difficultyList.getSelectedItem().toString();
         }
         /////////////////////////////////////////////////////////////////////
-        recCon.doSearch(difficultyItem, maxTime,
+        reciCon.doSearch(difficultyItem, maxTime,
             kitchenItem, maxPrice, ingredientItem);
         
         reciButtons.clear();
         resultsPanel.removeAll();
         
-        for(int i = 0; i< recCon.recipes.size(); i++){
-            if(recCon.recipes.get(i).getMatch() > 49){
-                reciButtons.add(i, (new JButton(recCon.recipes.get(i).getName() + recCon.recipes.get(i).getCuisine() + recCon.recipes.get(i).getMainIngredient() + recCon.recipes.get(i).getDifficulty())));
+        for(int i = 0; i< reciCon.recipes.size(); i++){
+            if(reciCon.recipes.get(i).getMatch() > 49){
+                JButton b = (new JButton(reciCon.recipes.get(i).getName() + " " + 
+                        reciCon.recipes.get(i).getCuisine() + " " + 
+                        reciCon.recipes.get(i).getMainIngredient() + " " + 
+                        reciCon.recipes.get(i).getDifficulty()));
+                b.setIcon(recipeImg);
+               
+                reciButtons.add(i, b);
+                
                 resultsPanel.add(reciButtons.get(i));
             }
         }
@@ -317,7 +310,6 @@ public class RecipeSearchView extends javax.swing.JFrame {
     private javax.swing.JComboBox kitchenList;
     private javax.swing.JLabel maxPriceLabel;
     private javax.swing.JSpinner maxPriceSpinner;
-    private javax.swing.JTextField maxTimeField;
     private javax.swing.JLabel maxTimeLabel;
     private javax.swing.JSlider maxTimeSlider;
     private javax.swing.JPanel recipePanel;
