@@ -73,21 +73,23 @@ public class RecipeSearchView extends javax.swing.JFrame implements ActionListen
         descriptionLabel = new javax.swing.JLabel();
         descriptionTextAreaPane = new javax.swing.JScrollPane();
         descriptionTextArea = new javax.swing.JTextArea();
-        kitchenLabel2 = new javax.swing.JLabel();
-        kitchenTextField = new javax.swing.JTextField();
-        difficultyLabel2 = new javax.swing.JLabel();
-        difficultyTextField = new javax.swing.JTextField();
-        priceLabel2 = new javax.swing.JLabel();
-        priceTextField = new javax.swing.JTextField();
-        timeLabel2 = new javax.swing.JLabel();
-        timeTextField = new javax.swing.JTextField();
-        portionsLabel = new javax.swing.JLabel();
-        portionsTextField = new javax.swing.JTextField();
-        mainIngredientLabel2 = new javax.swing.JLabel();
-        mainIngredientTextField = new javax.swing.JTextField();
         ingredientsLabel = new javax.swing.JLabel();
         ingredientsTextAreaPane = new javax.swing.JScrollPane();
         ingredientsTextArea = new javax.swing.JTextArea();
+        jPanel1 = new javax.swing.JPanel();
+        kitchenLabel2 = new javax.swing.JLabel();
+        mainIngredientLabel2 = new javax.swing.JLabel();
+        portionsLabel = new javax.swing.JLabel();
+        timeLabel2 = new javax.swing.JLabel();
+        priceLabel2 = new javax.swing.JLabel();
+        difficultyLabel2 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        writableKitchenLabel = new javax.swing.JLabel();
+        writableIngredientLabel = new javax.swing.JLabel();
+        writablePortionLabel = new javax.swing.JLabel();
+        writableDifficultyLabel = new javax.swing.JLabel();
+        writablePriceLabel = new javax.swing.JLabel();
+        writableTimeLabel = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         exitMenuItem = new javax.swing.JMenuItem();
@@ -226,36 +228,6 @@ public class RecipeSearchView extends javax.swing.JFrame implements ActionListen
         descriptionTextArea.setRows(5);
         descriptionTextAreaPane.setViewportView(descriptionTextArea);
 
-        kitchenLabel2.setText("Kök:");
-
-        kitchenTextField.setEditable(false);
-        kitchenTextField.setText("jTextField1");
-
-        difficultyLabel2.setText("Svårighetsgrad:");
-
-        difficultyTextField.setEditable(false);
-        difficultyTextField.setText("jTextField1");
-
-        priceLabel2.setText("Pris:");
-
-        priceTextField.setEditable(false);
-        priceTextField.setText("jTextField1");
-
-        timeLabel2.setText("Tid:");
-
-        timeTextField.setEditable(false);
-        timeTextField.setText("jTextField1");
-
-        portionsLabel.setText("Portioner:");
-
-        portionsTextField.setEditable(false);
-        portionsTextField.setText("jTextField1");
-
-        mainIngredientLabel2.setText("Huvudingrediens:");
-
-        mainIngredientTextField.setEditable(false);
-        mainIngredientTextField.setText("jTextField1");
-
         ingredientsLabel.setText("Ingredienser:");
 
         ingredientsTextArea.setEditable(false);
@@ -263,53 +235,118 @@ public class RecipeSearchView extends javax.swing.JFrame implements ActionListen
         ingredientsTextArea.setRows(5);
         ingredientsTextAreaPane.setViewportView(ingredientsTextArea);
 
+        kitchenLabel2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        kitchenLabel2.setText("Kök:");
+
+        mainIngredientLabel2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        mainIngredientLabel2.setText("Huvudingrediens:");
+
+        portionsLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        portionsLabel.setText("Portioner:");
+
+        timeLabel2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        timeLabel2.setText("Tid:");
+
+        priceLabel2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        priceLabel2.setText("Pris:");
+
+        difficultyLabel2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        difficultyLabel2.setText("Svårighetsgrad:");
+
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        writableKitchenLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        writableKitchenLabel.setText("kitchen...");
+
+        writableIngredientLabel.setText("ingredient...");
+
+        writablePortionLabel.setText("portions...");
+
+        writableDifficultyLabel.setText("difficulty...");
+
+        writablePriceLabel.setText("price...");
+
+        writableTimeLabel.setText("time...");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(mainIngredientLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(kitchenLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(portionsLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(difficultyLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(priceLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(timeLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(writableIngredientLabel)
+                    .addComponent(writableKitchenLabel)
+                    .addComponent(writablePortionLabel)
+                    .addComponent(writableDifficultyLabel)
+                    .addComponent(writablePriceLabel)
+                    .addComponent(writableTimeLabel))
+                .addContainerGap(159, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator1)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(kitchenLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(mainIngredientLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(portionsLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(difficultyLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(priceLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(timeLabel2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(writableKitchenLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(writableIngredientLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(writablePortionLabel)
+                        .addGap(18, 18, 18)
+                        .addComponent(writableDifficultyLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(writablePriceLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                        .addComponent(writableTimeLabel)))
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout detailedPanelLayout = new javax.swing.GroupLayout(detailedPanel);
         detailedPanel.setLayout(detailedPanelLayout);
         detailedPanelLayout.setHorizontalGroup(
             detailedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(detailedPanelLayout.createSequentialGroup()
-                .addGroup(detailedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(returnButton)
-                    .addGroup(detailedPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(detailedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ingredientsLabel)
-                            .addComponent(descriptionLabel)
-                            .addComponent(ingredientsTextAreaPane, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE)
-                            .addComponent(descriptionTextAreaPane))))
+                .addComponent(returnButton)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(detailedPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(detailedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(descriptionLabel)
                     .addGroup(detailedPanelLayout.createSequentialGroup()
                         .addComponent(iconLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(recipeNameLabel))
                     .addGroup(detailedPanelLayout.createSequentialGroup()
-                        .addComponent(portionsLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(portionsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(detailedPanelLayout.createSequentialGroup()
-                        .addComponent(difficultyLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(difficultyTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(detailedPanelLayout.createSequentialGroup()
-                        .addComponent(mainIngredientLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(mainIngredientTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(detailedPanelLayout.createSequentialGroup()
-                        .addComponent(kitchenLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(kitchenTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(detailedPanelLayout.createSequentialGroup()
-                        .addComponent(priceLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(priceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(detailedPanelLayout.createSequentialGroup()
-                        .addComponent(timeLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(timeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(488, Short.MAX_VALUE))
+                        .addGap(12, 12, 12)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(descriptionTextAreaPane, javax.swing.GroupLayout.PREFERRED_SIZE, 498, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ingredientsTextAreaPane, javax.swing.GroupLayout.PREFERRED_SIZE, 498, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ingredientsLabel))
+                .addContainerGap(318, Short.MAX_VALUE))
         );
         detailedPanelLayout.setVerticalGroup(
             detailedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -319,39 +356,17 @@ public class RecipeSearchView extends javax.swing.JFrame implements ActionListen
                 .addGroup(detailedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(iconLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(recipeNameLabel))
-                .addGap(23, 23, 23)
-                .addGroup(detailedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(kitchenTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(kitchenLabel2))
+                .addGap(49, 49, 49)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ingredientsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addComponent(ingredientsTextAreaPane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(detailedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mainIngredientTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mainIngredientLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(detailedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(difficultyTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(difficultyLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(detailedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(priceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(priceLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(detailedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(timeLabel2)
-                    .addComponent(timeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(3, 3, 3)
-                .addGroup(detailedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(portionsLabel)
-                    .addComponent(portionsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
                 .addComponent(descriptionLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(descriptionTextAreaPane, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(ingredientsLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ingredientsTextAreaPane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         detailedPane.setViewportView(detailedPanel);
@@ -446,9 +461,21 @@ public class RecipeSearchView extends javax.swing.JFrame implements ActionListen
         
         for(int i = 0; i< recCon.recipes.size(); i++){
             if(recCon.recipes.get(i).getMatch() > 49){
-                reciButtons.add(i, (new JButton(recCon.recipes.get(i).getName() + " " + recCon.recipes.get(i).getCuisine() + " " + recCon.recipes.get(i).getMainIngredient() + " " + recCon.recipes.get(i).getDifficulty() + " " + recCon.recipes.get(i).getPrice() + " " + recCon.recipes.get(i).getTime() + " " + recCon.recipes.get(i).getMatch())));
+                reciButtons.add(i, (new JButton("<html><body>" + recCon.recipes.get(i).getName() + 
+                        "<br />" + recCon.recipes.get(i).getCuisine() + " " + 
+                        recCon.recipes.get(i).getMainIngredient() + " " + 
+                        recCon.recipes.get(i).getDifficulty() + " " + 
+                        "<br />" +
+                        recCon.recipes.get(i).getPrice() + " kr " + 
+                        recCon.recipes.get(i).getTime() + " minuter " + 
+                        recCon.recipes.get(i).getMatch() + "% matchning" + "</body></html>"
+                        )));
+                
+                //("<html><body>line 1 <br /> line 2</body></html>")
+                        
                 reciButtons.get(i).setIcon(recCon.recipes.get(i).getImage(100, 100));
-                reciButtons.get(i).setActionCommand("" + i);
+                reciButtons.get(i).setHorizontalAlignment(SwingConstants.LEFT);
+                reciButtons.get(i).setActionCommand(Integer.toString(i));
                 searchHitsPanel.add(reciButtons.get(i));
                 reciButtons.get(i).addActionListener(this);
             }
@@ -466,13 +493,18 @@ public class RecipeSearchView extends javax.swing.JFrame implements ActionListen
         
         iconLabel.setIcon(currentRecipe.getImage(iconLabel.getSize()));
         recipeNameLabel.setText(currentRecipe.getName());
-        kitchenTextField.setText(currentRecipe.getCuisine());
-        mainIngredientTextField.setText(currentRecipe.getMainIngredient());
-        difficultyTextField.setText(currentRecipe.getDifficulty());
-        timeTextField.setText( currentRecipe.getTime() + " minuter");
-        priceTextField.setText("" + currentRecipe.getPrice() + " kr");
-        timeTextField.setText("" + currentRecipe.getServings() + " minuter");
-        portionsTextField.setText("" + currentRecipe.getServings());
+        writableKitchenLabel.setText(currentRecipe.getCuisine());
+        
+        writableIngredientLabel.setText(currentRecipe.getMainIngredient());
+        
+        writableDifficultyLabel.setText(currentRecipe.getDifficulty());
+       
+        writableTimeLabel.setText( currentRecipe.getTime() + " minuter");
+        
+        writablePriceLabel.setText(currentRecipe.getPrice() + " kr");
+        
+        
+        writablePortionLabel.setText(Integer.toString(currentRecipe.getServings()));
         
         descriptionTextArea.setText(currentRecipe.getDescription());
         ingredientsTextArea.setText("");
@@ -501,7 +533,6 @@ public class RecipeSearchView extends javax.swing.JFrame implements ActionListen
     private javax.swing.JLabel difficultyLabel;
     private javax.swing.JLabel difficultyLabel2;
     private javax.swing.JComboBox difficultyList;
-    private javax.swing.JTextField difficultyTextField;
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
@@ -509,21 +540,19 @@ public class RecipeSearchView extends javax.swing.JFrame implements ActionListen
     private javax.swing.JLabel ingredientsLabel;
     private javax.swing.JTextArea ingredientsTextArea;
     private javax.swing.JScrollPane ingredientsTextAreaPane;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel kitchenLabel;
     private javax.swing.JLabel kitchenLabel2;
     private javax.swing.JComboBox kitchenList;
-    private javax.swing.JTextField kitchenTextField;
     private javax.swing.JLabel mainIngredientLabel;
     private javax.swing.JLabel mainIngredientLabel2;
     private javax.swing.JComboBox mainIngredientList;
-    private javax.swing.JTextField mainIngredientTextField;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JLabel portionsLabel;
-    private javax.swing.JTextField portionsTextField;
     private javax.swing.JLabel priceLabel;
     private javax.swing.JLabel priceLabel2;
     private javax.swing.JSpinner priceSpinner;
-    private javax.swing.JTextField priceTextField;
     private javax.swing.JLabel recipeNameLabel;
     private javax.swing.JPanel recipeTopPanel;
     private javax.swing.JButton returnButton;
@@ -535,7 +564,12 @@ public class RecipeSearchView extends javax.swing.JFrame implements ActionListen
     private javax.swing.JLabel timeLabel;
     private javax.swing.JLabel timeLabel2;
     private javax.swing.JSpinner timeSpinner;
-    private javax.swing.JTextField timeTextField;
+    private javax.swing.JLabel writableDifficultyLabel;
+    private javax.swing.JLabel writableIngredientLabel;
+    private javax.swing.JLabel writableKitchenLabel;
+    private javax.swing.JLabel writablePortionLabel;
+    private javax.swing.JLabel writablePriceLabel;
+    private javax.swing.JLabel writableTimeLabel;
     // End of variables declaration//GEN-END:variables
 
 }
