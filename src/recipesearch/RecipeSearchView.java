@@ -64,6 +64,7 @@ public class RecipeSearchView extends javax.swing.JFrame implements ActionListen
         recipeTopPanel = new javax.swing.JPanel();
         searchHitsPane = new javax.swing.JScrollPane();
         searchHitsPanel = new javax.swing.JPanel();
+        awaitingSearchLabel = new javax.swing.JLabel();
         detailedPane = new javax.swing.JScrollPane();
         detailedPanel = new javax.swing.JPanel();
         returnButton = new javax.swing.JButton();
@@ -192,6 +193,12 @@ public class RecipeSearchView extends javax.swing.JFrame implements ActionListen
 
         searchHitsPanel.setAutoscrolls(true);
         searchHitsPanel.setLayout(new java.awt.GridLayout(0, 1));
+
+        awaitingSearchLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        awaitingSearchLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        awaitingSearchLabel.setText("Sök på recept genom att välja sökkriterier och klicka \"sök\".");
+        searchHitsPanel.add(awaitingSearchLabel);
+
         searchHitsPane.setViewportView(searchHitsPanel);
 
         recipeTopPanel.add(searchHitsPane, "searchHitsPanel");
@@ -485,6 +492,7 @@ public class RecipeSearchView extends javax.swing.JFrame implements ActionListen
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;
+    private javax.swing.JLabel awaitingSearchLabel;
     private javax.swing.JLabel descriptionLabel;
     private javax.swing.JTextArea descriptionTextArea;
     private javax.swing.JScrollPane descriptionTextAreaPane;
